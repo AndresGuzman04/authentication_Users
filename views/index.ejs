@@ -85,7 +85,7 @@
 
         <% if (typeof username === 'undefined') { %>
             <div class="form-container">
-                <form action="" class="login-form">
+                <form id="login-form">
                     <h2>Login</h2>
                     <label for="login-username">Username</label>
                     <input type="text" id="login-username" name="username" required>
@@ -99,13 +99,16 @@
             </div>
 
             <div class="form-container">
-                <form action="" class="register-form">
+                <form id="register-form">
                     <h2>Register</h2>
                     <label for="register-username">Username</label>
                     <input type="text" id="register-username" name="username" required>
 
                     <label for="register-password">Password</label>
                     <input type="password" id="register-password" name="password" required>
+
+                    <label for="register-confirm-password">Confirm Password</label>
+                    <input type="password" id="register-confirm-password" name="confirm-password" required>
 
                     <button type="submit">Register</button>
                     <span>&nbsp;</span>
@@ -155,6 +158,7 @@
             e.preventDefault();
             const username = $('#register-username').value;
             const password = $('#register-password').value;
+            const confirmPassword = $('#register-confirm-password').value;
 
             if (password !== confirmPassword) {
                 alert('Password do not match')
